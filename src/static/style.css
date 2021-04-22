@@ -1,0 +1,87 @@
+:root {
+    --medium-size: 128px;
+    --gap: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    height: 100%
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+    background-color: #333231;
+}
+
+.invisible {
+    display: none !important;
+}
+
+#reset {
+    margin-top: 32px;
+}
+
+#modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 2rem;
+    border-radius: 12px;
+
+    background-color: white;
+    height: 120px;
+    width: 320px;
+}
+
+#game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#board {
+    background-color: black;
+    border: var(--gap) solid black;
+    gap: var(--gap);
+    display: grid;
+    grid-template-columns: repeat(3, var(--medium-size));
+    grid-template-rows: repeat(3, var(--medium-size));
+}
+
+.tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    font-size: 8em;
+
+    background-color: white;
+    transition: background-color 100ms ease-in-out;
+}
+
+.tile:hover {
+    background-color: #999;
+}
