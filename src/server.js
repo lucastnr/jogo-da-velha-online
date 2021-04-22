@@ -56,7 +56,7 @@ const handleConnect = (socket) => {
 }
 
 const updateGame = (socket) => {
-    socket.brodcast.emit("gameUpdate", board);
+    socket.broadcast.emit("gameUpdate", board);
 }
 
 const resetBoard = (socket) => {
