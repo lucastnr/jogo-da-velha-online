@@ -1,5 +1,0 @@
-
-ejs
-express
-socket.io
-nodemon
