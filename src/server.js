@@ -5,6 +5,8 @@ const app = express();
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
 
+const PORT = process.env.PORT || 4000;
+
 const staticPath = path.join(__dirname, "static");
 app.use(express.static(staticPath));
 app.set("views", path.join(staticPath));
@@ -105,4 +107,4 @@ const getPlayerValue = () => {
     return "INVALID";
 }
 
-server.listen(4000);
+server.listen(PORT);
