@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "engine": {
-    "node": "10.x",
+    "node": "10.x"
   },
   "scripts": {
     "start": "nodemon ./src/server.js"
