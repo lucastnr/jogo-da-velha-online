@@ -31,7 +31,7 @@ class Hash {
     }
 
     handleTileClick(e, socket) {
-        if (this.#player == "INVALID") return;
+        if (this.#player.value == "INVALID") return;
 
         const tile = e.target;
         const tilePos = tile.className.split(" ")[1];

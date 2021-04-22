@@ -88,10 +88,6 @@ const logPlayers = () => {
     console.log(`Jogadores conectados: ${connectedPlayers.length}\n`);
 }
 
-const handleReset = () => {
-    this.socket.emit("resetGame");
-}
-
 const handleTileClick = (socket, data) => {
     const playerObject = findPlayerObject(socket.id);
     const value = playerObject.value;
