@@ -49,14 +49,14 @@ const handleConnect = (socket) => {
     }
 
     socket.emit("playerObject", playerObject);
-    updateGame(socket);
+    updateGame();
 
     connectedPlayers.push(playerObject);
     logPlayers()
 }
 
-const updateGame = (socket) => {
-    socket.broadcast.emit("gameUpdate", board);
+const updateGame = () => {
+    io.emit("gameUpdate", board);
 }
 
 const resetBoard = (socket) => {
@@ -79,7 +79,7 @@ const handleDisconnect = (socket) => {
     console.log(`Socket desconectado ${id}`)
     const playerIndex = findPlayerIndex(id);
 
-    playerIndex != 1 && connectedPlayers.shift(playerIndex);
+    playerIndex != 1 && connectedPlayers.splice(playerIndex, 1);
 
     logPlayers();
 }

@@ -9,7 +9,7 @@ class Hash {
         this.#modal = document.getElementById("modal");
         const reset = document.getElementById("reset");
 
-        this.socket = io("https://server-jogo-da-velha.herokuapp.com/");
+        this.socket = io("http://4f2a001209c6.ngrok.io/");
 
         this.socket.on("gameUpdate", data => this.handleGameChange(data, this.socket))
         this.socket.on("playerObject", data => this.handlePlayerObject(data))
@@ -18,6 +18,7 @@ class Hash {
     }
 
     handleGameChange(data, socket) {
+        console.log(data);
         for (let i = 0; i < 9; i++) {
             this.#tiles[i].innerHTML = data[i];
             this.#tiles[i].onclick = e => this.handleTileClick(e, socket)
