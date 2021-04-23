@@ -2,7 +2,6 @@
 // "https://server-jogo-da-velha.herokuapp.com/";
 // local
 // "localhost:5251";
-
 class Hash {
     #tiles;
     socket;
