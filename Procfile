@@ -1,1 +1,1 @@
-web: npm start-prod
+web: cross-env ENV=heroku npm start-prod

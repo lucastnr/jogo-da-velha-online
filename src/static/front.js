@@ -1,3 +1,5 @@
+const url = require("../services/url");
+
 class Hash {
     #tiles;
     socket;
@@ -9,7 +11,7 @@ class Hash {
         this.#modal = document.getElementById("modal");
         const reset = document.getElementById("reset");
 
-        this.socket = io("http://4f2a001209c6.ngrok.io/");
+        this.socket = io(url);
 
         this.socket.on("gameUpdate", data => this.handleGameChange(data, this.socket))
         this.socket.on("playerObject", data => this.handlePlayerObject(data))
