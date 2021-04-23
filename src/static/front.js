@@ -14,7 +14,7 @@ class Hash {
         this.#modal = document.getElementById("modal");
         const reset = document.getElementById("reset");
 
-        this.socket = io("localhost:5251");
+        this.socket = io("https://server-jogo-da-velha.herokuapp.com/");
 
         this.socket.on("gameUpdate", data => this.handleGameChange(data, this.socket))
         this.socket.on("playerObject", data => this.handlePlayerObject(data))
