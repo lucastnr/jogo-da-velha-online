@@ -1,4 +1,7 @@
-const url = require("../services/url");
+// heroku
+// "https://server-jogo-da-velha.herokuapp.com/";
+// local
+// "localhost:5251";
 
 class Hash {
     #tiles;
@@ -11,7 +14,7 @@ class Hash {
         this.#modal = document.getElementById("modal");
         const reset = document.getElementById("reset");
 
-        this.socket = io(url);
+        this.socket = io("localhost:5251");
 
         this.socket.on("gameUpdate", data => this.handleGameChange(data, this.socket))
         this.socket.on("playerObject", data => this.handlePlayerObject(data))

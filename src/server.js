@@ -5,13 +5,17 @@ const app = express();
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT;
 
 const staticPath = path.join(__dirname, "static");
 app.use(express.static(staticPath));
 app.set("views", path.join(staticPath));
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
+
+app.use("/", (req, res) => {
+    res.render("index.html");
+})
 
 app.use("/", (req, res) => {
     res.render("index.html");
@@ -104,3 +108,4 @@ const getPlayerValue = () => {
 }
 
 server.listen(PORT);
+console.log(`Server rodando na porta ${PORT}`);
