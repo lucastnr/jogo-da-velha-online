@@ -7,7 +7,7 @@
     "node": "10.x"
   },
   "scripts": {
-    "start": "cross-env-shell ENV=local PORT=5251 nodemon -r ./src/server.js",
+    "start": "cross-env-shell PORT=5251 nodemon -r ./src/server.js",
     "start-prod": "node ./src/server.js",
     "deploy-heroku": "git add .; git commit -m \"update\"; git push heroku master"
   },
