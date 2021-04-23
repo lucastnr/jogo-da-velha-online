@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "cross-env-shell ENV=local PORT=5251 nodemon -r ./src/server.js",
+    "start-prod": "cross-env-shell ENV=heroku nodemon -r ./src/server.js",
     "deploy-heroku": "git add .; git commit -m \"update\"; git push heroku master"
   },
   "author": "",
